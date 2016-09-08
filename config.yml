@@ -1,0 +1,18 @@
+---
+controllers:
+  - SPARCControllerModalWelcome.js
+directives:
+  - sparcModalWelcome.js
+templates:
+  - sparc_modal_welcome.tpl.html
+less:
+  - sparc_welcome.less
+modals:
+  - name: sparc_welcome
+    ui:
+      mainClass: ""
+      tabs:
+        - target: modal-sparc-welcome-intro
+          label: Introduction
+        - target: modal-sparc-welcome-about
+          label: About
