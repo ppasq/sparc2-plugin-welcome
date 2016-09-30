@@ -24,13 +24,6 @@
               <hr>
               <h3 class="welcome-body">Get Started: Select a county &amp; hazard!</h3>
               <div class="input-group select2-bootstrap-prepend select2-bootstrap-append">
-                <input
-                  id="country-input-backend"
-                  name="country-input-backend"
-                  type="text"
-                  class="form-control"
-                  style="display:none;"
-                  ng-model="country">
                 <span class="input-group-addon" id="country-addon">Country</span>
                 <input
                   id="country-input"
@@ -41,35 +34,29 @@
                   placeholder="Country (e.g., Haiti or Philippines)"
                   aria-describedby="country-addon"
                   data-placeholder="Country (e.g., Haiti, Nepal, or Philippines)"
-                  data-initial-data="countries_select2"
-                  data-backend="country-input-backend"
+                  data-typeahead-datasets="Countries"
+                  data-target-scope-id="geodash-modal-sparc-welcome"
+                  data-target-scope-path="country"
+                  data-search-output="id"
                   data-template-empty="<div class=&quot;alert alert-danger empty-message&quot;>Unable to find country</div>">
                   <div
                     class="input-group-addon btn btn-primary btn-show-options"
                     data-toggle="tooltip"
                     data-placement="bottom"
                     title="Show Options"
-                    ng-click="showOptions($event, '#country-input')">
+                    ng-click="showOptions('#country-input')">
                     <i class="fa fa-chevron-down"></i>
                   </div>
                   <div
-                    class="input-group-addon btn btn-danger btn-clear"
-                    data-clear="#country-input"
+                    class="input-group-addon btn btn-danger geodash-clear"
                     data-toggle="tooltip"
                     data-placement="bottom"
-                    title="Clear Selection">
+                    title="Clear Selection"
+                    data-target-input-id="country-input">
                     <i class="fa fa-times"></i>
                   </div>
               </div>
-              <br>
               <div class="input-group select2-bootstrap-prepend select2-bootstrap-append">
-                <input
-                  id="hazard-input-backend"
-                  name="hazard-input-backend"
-                  type="text"
-                  class="form-control"
-                  style="display:none;"
-                  ng-model="hazard">
                 <span class="input-group-addon" id="hazard-addon">Hazard</span>
                 <input
                   id="hazard-input"
@@ -80,23 +67,25 @@
                   placeholder="Hazard (e.g., Flood, Cyclone, Drought, or Landslide)"
                   aria-describedby="hazard-addon"
                   data-placeholder="Hazard (e.g., Flood, Cyclone, Drought, or Landslide)"
-                  data-initial-data="hazards_select2"
-                  data-backend="hazard-input-backend"
+                  data-typeahead-datasets="Hazards"
+                  data-target-scope-id="geodash-modal-sparc-welcome"
+                  data-target-scope-path="hazard"
+                  data-search-output="id"
                   data-template-empty="<div class=&quot;empty-message&quot;>Unable to find hazard</div>">
                   <div
                     class="input-group-addon btn btn-primary btn-show-options"
                     data-toggle="tooltip"
                     data-placement="bottom"
                     title="Show Options"
-                    ng-click="showOptions($event, '#hazard-input')">
+                    ng-click="showOptions('#hazard-input')">
                     <i class="fa fa-chevron-down"></i>
                   </div>
                   <div
-                    class="input-group-addon btn btn-danger btn-clear"
-                    data-clear="#hazard-input"
+                    class="input-group-addon btn btn-danger geodash-clear"
                     data-toggle="tooltip"
                     data-placement="bottom"
-                    title="Clear Selection">
+                    title="Clear Selection"
+                    data-target-input-id="hazard-input">
                     <i class="fa fa-times"></i>
                   </div>
               </div>

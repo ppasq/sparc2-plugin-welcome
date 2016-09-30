@@ -7,5 +7,13 @@ geodash.controllers["SPARCControllerModalWelcome"] = function(
   $scope.ui = m.ui;
   $scope.showOptions = geodash.ui.showOptions;
   $scope.updateValue = geodash.api.updateValue;
-  $scope.showOptions = geodash.ui.showOptions;
+
+  $scope.country = geodash.initial_state.iso3;
+  $scope.hazard = geodash.initial_state.hazard;
+
+  $scope.clearSelection = function(id)
+  {
+    $("#"+id).val(null);
+    $("#"+id).typeahead("close");
+  };
 };

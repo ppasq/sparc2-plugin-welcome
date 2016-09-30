@@ -1,4 +1,5 @@
 ---
+name: "sparc2-plugin-welcome"
 controllers:
   - SPARCControllerModalWelcome.js
 directives:
