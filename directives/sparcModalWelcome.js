@@ -1,4 +1,4 @@
-geodash.directives["sparcModalWelcome"] = function(){
+geodash.directives.sparcModalWelcome = function(){
   return {
     controller: geodash.controllers.SPARCControllerModalWelcome,
     restrict: 'EA',

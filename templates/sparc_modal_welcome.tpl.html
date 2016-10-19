@@ -7,7 +7,7 @@
   <div class="modal-dialog" data-backdrop="static" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">{{ welcome.title }}</h4>
+        <h4 class="modal-title" id="myModalLabel">{{ dashboard.welcome.title }}</h4>
       </div>
       <div class="modal-body">
         <div>
@@ -20,7 +20,7 @@
               style="padding: 10px;">
               <span
                 class="welcome-body"
-                ng-bind-html="welcome.intro | md2html | default:'No body given.'"></span>
+                ng-bind-html="dashboard.welcome.intro | md2html | default:'No body given.'"></span>
               <hr>
               <h3 class="welcome-body">Get Started: Select a county &amp; hazard!</h3>
               <div class="input-group select2-bootstrap-prepend select2-bootstrap-append">
@@ -104,7 +104,7 @@
               class="tab-pane fade"
               role="tabpanel"
               style="padding: 10px;">
-              <span ng-bind-html="welcome.about | md2html | default:'No body given.'"></span>
+              <span ng-bind-html="dashboard.welcome.about | md2html | default:'No body given.'"></span>
             </div>
           </div>
         </div>
