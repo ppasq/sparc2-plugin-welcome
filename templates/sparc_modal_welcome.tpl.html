@@ -6,109 +6,124 @@
   aria-labelledby="myModalLabel">
   <div class="modal-dialog" data-backdrop="static" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">{{ dashboard.welcome.title }}</h4>
-      </div>
-      <div class="modal-body">
-        <div>
-          <div geodash-tabs></div>
-          <div class="tab-content">
-            <div
-              id="modal-sparc-welcome-intro"
-              class="tab-pane fade in active"
-              role="tabpanel"
-              style="padding: 10px;">
-              <span
-                class="welcome-body"
-                ng-bind-html="dashboard.welcome.intro | md2html | default:'No body given.'"></span>
-              <hr>
-              <h3 class="welcome-body">Get Started: Select a country &amp; hazard!</h3>
-              <div class="input-group select2-bootstrap-prepend select2-bootstrap-append">
-                <span class="input-group-addon" id="country-addon">Country</span>
-                <input
-                  id="country-input"
-                  name="country-input"
-                  type="text"
-                  class="typeahead form-control"
-                  style="height: auto;"
-                  placeholder="Country (e.g., Haiti or Philippines)"
-                  aria-describedby="country-addon"
-                  data-placeholder="Country (e.g., Haiti, Nepal, or Philippines)"
-                  data-typeahead-datasets="Countries"
-                  data-target-scope-id="geodash-modal-sparc-welcome"
-                  data-target-scope-path="country"
-                  data-search-output="id"
-                  data-template-empty="<div class=&quot;alert alert-danger empty-message&quot;>Unable to find country</div>">
-                  <div
-                    class="input-group-addon btn btn-primary btn-show-options"
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                    title="Show Options"
-                    ng-click="showOptions('#country-input')">
-                    <i class="fa fa-chevron-down"></i>
-                  </div>
-                  <div
-                    class="input-group-addon btn btn-danger geodash-clear"
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                    title="Clear Selection"
-                    data-target-input-id="country-input">
-                    <i class="fa fa-times"></i>
-                  </div>
-              </div>
-              <div class="input-group select2-bootstrap-prepend select2-bootstrap-append">
-                <span class="input-group-addon" id="hazard-addon">Hazard</span>
-                <input
-                  id="hazard-input"
-                  name="hazard-input"
-                  type="text"
-                  class="typeahead form-control"
-                  style="height: auto;"
-                  placeholder="Hazard (e.g., Flood, Cyclone, Drought, or Landslide)"
-                  aria-describedby="hazard-addon"
-                  data-placeholder="Hazard (e.g., Flood, Cyclone, Drought, or Landslide)"
-                  data-typeahead-datasets="Hazards"
-                  data-target-scope-id="geodash-modal-sparc-welcome"
-                  data-target-scope-path="hazard"
-                  data-search-output="id"
-                  data-template-empty="<div class=&quot;empty-message&quot;>Unable to find hazard</div>">
-                  <div
-                    class="input-group-addon btn btn-primary btn-show-options"
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                    title="Show Options"
-                    ng-click="showOptions('#hazard-input')">
-                    <i class="fa fa-chevron-down"></i>
-                  </div>
-                  <div
-                    class="input-group-addon btn btn-danger geodash-clear"
-                    data-toggle="tooltip"
-                    data-placement="bottom"
-                    title="Clear Selection"
-                    data-target-input-id="hazard-input">
-                    <i class="fa fa-times"></i>
-                  </div>
-              </div>
-              <hr>
-              <ul class="nav nav-justified welcome-go">
-                <li>
-                  <a
-                    ng-disabled="country == undefined || hazard == undefined || country == '' || hazard == ''"
-                    ng-class="country == undefined || hazard == undefined || country == '' || hazard == '' ? 'btn btn-default' : 'btn btn-primary' "
-                    ng-href="{{ country == undefined || hazard == undefined || country == '' || hazard == '' ? '#' : '/country/'+country+'/hazard/'+hazard +'/month/1' }}">Go!</a>
-                </li>
-              </ul>
+      <div class="row">
+        <div class="col-sm-6 no-float left">
+          <img src="http://www1.wfp.org/themes/custom/wfp_org/images/logos/wfp-logo-extended-white-en.svg" alt="logo" width="auto" height="auto">
+
+          <div class="search-risk-form">
+
+            <!-- Search -->
+            <label>Select a country &amp; hazard</label>
+            <div class="input-group select2-bootstrap-prepend select2-bootstrap-append">
+              <input
+                id="country-input"
+                name="country-input"
+                type="text"
+                class="typeahead form-control"
+                style="height: auto;"
+                placeholder="Country (e.g., Haiti or Philippines)"
+                aria-describedby="country-addon"
+                data-placeholder="Country (e.g., Haiti, Nepal, or Philippines)"
+                data-typeahead-datasets="Countries"
+                data-target-scope-id="geodash-modal-sparc-welcome"
+                data-target-scope-path="country"
+                data-search-output="id"
+                data-template-empty="<div class=&quot;alert alert-danger empty-message&quot;>Unable to find country</div>">
+                <div
+                  class="input-group-addon btn btn-primary btn-show-options"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Show Options"
+                  ng-click="showOptions('#country-input')">
+                  <i class="fa fa-chevron-down"></i>
+                </div>
+                <div
+                  class="input-group-addon btn btn-danger geodash-clear"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Clear Selection"
+                  data-target-input-id="country-input">
+                  <i class="fa fa-times"></i>
+                </div>
             </div>
-            <div
-              id="modal-sparc-welcome-about"
-              class="tab-pane fade"
-              role="tabpanel"
-              style="padding: 10px;">
-              <span ng-bind-html="dashboard.welcome.about | md2html | default:'No body given.'"></span>
+            <div class="input-group select2-bootstrap-prepend select2-bootstrap-append">
+              <!-- <span class="input-group-addon" id="hazard-addon">Hazard</span> -->
+              <input
+                id="hazard-input"
+                name="hazard-input"
+                type="text"
+                class="typeahead form-control"
+                style="height: auto;"
+                placeholder="Hazard (e.g., Flood, Cyclone, Drought, or Landslide)"
+                aria-describedby="hazard-addon"
+                data-placeholder="Hazard (e.g., Flood, Cyclone, Drought, or Landslide)"
+                data-typeahead-datasets="Hazards"
+                data-target-scope-id="geodash-modal-sparc-welcome"
+                data-target-scope-path="hazard"
+                data-search-output="id"
+                data-template-empty="<div class=&quot;empty-message&quot;>Unable to find hazard</div>">
+                <div
+                  class="input-group-addon btn btn-primary btn-show-options"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Show Options"
+                  ng-click="showOptions('#hazard-input')">
+                  <i class="fa fa-chevron-down"></i>
+                </div>
+                <div
+                  class="input-group-addon btn btn-danger geodash-clear"
+                  data-toggle="tooltip"
+                  data-placement="bottom"
+                  title="Clear Selection"
+                  data-target-input-id="hazard-input">
+                  <i class="fa fa-times"></i>
+                </div>
             </div>
+            <ul class="nav nav-justified welcome-go">
+              <li>
+                <a
+                  ng-disabled="country == undefined || hazard == undefined || country == '' || hazard == ''"
+                  ng-class="country == undefined || hazard == undefined || country == '' || hazard == '' ? 'btn btn-default' : 'btn btn-primary' "
+                  ng-href="{{ country == undefined || hazard == undefined || country == '' || hazard == '' ? '#' : '/country/'+country+'/hazard/'+hazard +'/month/1' }}">Go!</a>
+              </li>
+            </ul>
+
+
+            <!-- End of Search -->
+
           </div>
         </div>
+        <div class="col-sm-6 no-float right">
+          <div class="modal-body">
+            <h1>SPARC</h1>
+            <h3>Spatial Risk Calendar</h3>
+            <div>
+              <div class="tab-content">
+                <!-- <div
+                  id="modal-sparc-welcome-intro"
+                  class=""
+                  role=""
+                  style="padding: 0">
+                  <span
+                    class="welcome-body"
+                    ng-bind-html="dashboard.welcome.intro | md2html | default:'No body given.'"></span>
+                </div> -->
+                <div
+                  id="modal-sparc-welcome-about"
+                  class=""
+                  role=""
+                  style="padding: 0">
+                  <span ng-bind-html="dashboard.welcome.about | md2html | default:'No body given.'"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
+
+
+
     </div>
   </div>
 </div>
