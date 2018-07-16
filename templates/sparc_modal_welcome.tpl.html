@@ -95,27 +95,35 @@
         </div>
         <div class="col-sm-6 no-float right">
           <div class="modal-body">
-            <h1>SPARC</h1>
-            <h3>Spatial Risk Calendar</h3>
-            <div>
-              <div class="tab-content">
-                <!-- <div
-                  id="modal-sparc-welcome-intro"
-                  class=""
-                  role=""
-                  style="padding: 0">
-                  <span
-                    class="welcome-body"
-                    ng-bind-html="dashboard.welcome.intro | md2html | default:'No body given.'"></span>
-                </div> -->
-                <div
-                  id="modal-sparc-welcome-about"
-                  class=""
-                  role=""
-                  style="padding: 0">
-                  <span ng-bind-html="dashboard.welcome.about | md2html | default:'No body given.'"></span>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="welcome">
+                <h1>SPARC</h1>
+                <h3>Spatial Risk Calendar</h3>
+                <div>
+                  <div class="tab-content">
+                    <div
+                      id="modal-sparc-welcome-about"
+                      class=""
+                      role=""
+                      style="padding: 0">
+                      <span ng-bind-html="dashboard.welcome.about | md2html | default:'No body given.'"></span>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div role="tabpanel" class="tab-pane fade" id="tutorial">
+                <h1>SPARC</h1>
+                <h3>Tutorial</h3>
+                <div class="tab-content">
+                  <div class="embed-responsive embed-responsive-16by9 video-tutorial">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/CQHMEaOiw0g" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#welcome" aria-controls="welcome" role="tab" data-toggle="tab">Welcome</a></li>
+                <li role="presentation"><a href="#tutorial" aria-controls="tutorial" role="tab" data-toggle="tab">Tutorial</a></li>
+              </ul>
             </div>
           </div>
 

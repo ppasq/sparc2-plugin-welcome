@@ -142,6 +142,19 @@
           font-size: 0.875rem;
         }
       }
+      .nav-tabs {
+        border: 0;
+      }
+      .nav-tabs > li.active > a {
+        border: 0;
+        display: none;
+      }
+      .nav-tabs > li > a {
+        padding-left: 0;
+      }
+      .video-tutorial {
+        min-width: calc(~"540px - 4rem");
+      }
     }
   }
 
@@ -149,6 +162,13 @@
     .modal-dialog {
         width: 808px;
         margin: 120px auto;
+    }
+    .search-risk-form {
+      margin: calc(~"50% + 72px") 2rem;
+    }
+    .video-tutorial {
+      min-width: calc(~"404px - 2rem");
+      max-width: calc(~"560px - 2rem");
     }
   }
 }
